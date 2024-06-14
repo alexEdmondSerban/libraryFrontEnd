@@ -1,0 +1,49 @@
+<div class="container mt-4">
+    <h1>Add New Book</h1>
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" formControlName="title">
+        <div *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched" class="text-danger">
+          Title is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" formControlName="author">
+        <div *ngIf="bookForm.get('author')?.invalid && bookForm.get('author')?.touched" class="text-danger">
+          Author is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" formControlName="description"></textarea>
+        <div *ngIf="bookForm.get('description')?.invalid && bookForm.get('description')?.touched" class="text-danger">
+          Description is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" id="genre" formControlName="genre">
+        <div *ngIf="bookForm.get('genre')?.invalid && bookForm.get('genre')?.touched" class="text-danger">
+          Genre is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
+        <div *ngIf="bookForm.get('imageUrl')?.invalid && bookForm.get('imageUrl')?.touched" class="text-danger">
+          Image URL is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pdf">PDF File</label>
+        <input type="text" class="form-control" id="pdf" formControlName="pdf">
+        <div *ngIf="bookForm.get('pdf')?.invalid && bookForm.get('pdf')?.touched" class="text-danger">
+          PDF File is required
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="bookForm.invalid">Add Book</button>
+    </form>
+  </div>
+  <br>

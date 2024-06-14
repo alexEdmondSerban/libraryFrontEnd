@@ -1,0 +1,9 @@
+<div class="card" (click)="navigateToDetails">
+    <img class="card-img-top" [src]="'../../assets/bookImages/' + book.imageUrl + '.jpg'" [alt]="book.title">
+    <div class="card-body">
+      <h5 class="card-title">{{ book.title }}</h5>
+      <p class="card-text">{{ book.genre }}</p>
+      <p class="card-text">{{ book.description }}</p>
+      <a [routerLink]="['/books', book._id]" class="btn btn-primary detailsButton">Read More</a>
+    </div>
+  </div>

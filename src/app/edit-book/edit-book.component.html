@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <h1>Edit Book</h1>
+  <form [formGroup]="bookForm" (ngSubmit)="saveBook()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" class="form-control" formControlName="title">
+      <div *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched" class="text-danger">
+        Title is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="text" id="author" class="form-control" formControlName="author">
+      <div *ngIf="bookForm.get('author')?.invalid && bookForm.get('author')?.touched" class="text-danger">
+        Author is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" class="form-control" formControlName="description"></textarea>
+      <div *ngIf="bookForm.get('description')?.invalid && bookForm.get('description')?.touched" class="text-danger">
+        Description is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input type="text" id="genre" class="form-control" formControlName="genre">
+      <div *ngIf="bookForm.get('genre')?.invalid && bookForm.get('genre')?.touched" class="text-danger">
+        Genre is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">Image URL</label>
+      <input type="text" id="imageUrl" class="form-control" formControlName="imageUrl">
+      <div *ngIf="bookForm.get('imageUrl')?.invalid && bookForm.get('imageUrl')?.touched" class="text-danger">
+        Image URL is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pdf">PDF Name</label>
+      <input type="text" id="pdf" class="form-control" formControlName="pdf">
+      <div *ngIf="bookForm.get('pdf')?.invalid && bookForm.get('pdf')?.touched" class="text-danger">
+        PDF Name is required
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">Save</button>
+  </form>
+</div>
+<br>

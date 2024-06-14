@@ -1,0 +1,20 @@
+<div class="container mt-4 mb-4" *ngIf="book">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>{{ book.title }}</h1>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <img class="img-fluid imageDetails" [src]="'../../assets/bookImages/' + book.imageUrl + '.jpg'" [alt]="book.title">
+        <div class="mt-3">
+          <a [href]="'../../assets/books/' + book.pdf + '.pdf'" class="btn btn-primary" download>Download PDF</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Book Details</h3>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Genre:</strong> {{ book.genre }}</li>
+          <li class="list-group-item"><strong>Description:</strong> {{ book.description }}</li>
+        </ul>
+        <button class="btn btn-secondary mt-3" (click)="goBack()">Back to List</button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h1>Welcome to the Virtual Library!</h1>
+    <p>
+      Explore our extensive collection of books and discover your next read.
+    </p>
+  
+    <!-- Add additional content as needed -->
+  
+    <!-- Example of featured books -->
+    <h2>Now featuring</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <app-book [book]="books[0]"></app-book>
+      </div>
+    </div>
+
+    <!-- Display BookList component with book data -->
+    <h2>All Books</h2>
+    <br>
+    <app-book-list></app-book-list>
+  </div>
